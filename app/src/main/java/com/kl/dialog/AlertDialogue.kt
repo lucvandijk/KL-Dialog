@@ -8,6 +8,7 @@ class AlertDialogue(
     context: Context,
     title: String,
     message: String,
+    yesText: String,
     confirmActionCallback: () -> Unit
 ): AlertDialog.Builder(context) {
 
@@ -24,7 +25,7 @@ class AlertDialogue(
                 }
             }
 
-        setPositiveButton("Ja", listener)
+        setPositiveButton(yesText, listener)
 
         setOnCancelListener {
             confirmActionCallback()

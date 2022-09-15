@@ -11,12 +11,14 @@ class KLDialogueManager {
             context: Context,
             title: String,
             message: String,
+            yesText: String,
             confirmationCallback: () -> Unit
         ) {
             AlertDialogue(
                 context,
                 title,
                 message,
+                yesText,
                 confirmationCallback
             ).show()
         }
