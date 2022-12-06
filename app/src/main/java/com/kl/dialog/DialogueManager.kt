@@ -2,7 +2,6 @@ package com.kl.dialog
 
 import android.content.Context
 import android.view.WindowManager
-import androidx.appcompat.app.AppCompatActivity
 
 class KLDialogueManager {
     companion object {
@@ -22,6 +21,32 @@ class KLDialogueManager {
                 confirmationCallback
             ).show()
         }
+
+        fun yesNoDialogue(
+            context: Context,
+            title: String,
+            message: String,
+            yesText: String,
+            noText: String,
+            yesAction: () -> Unit,
+            noAction: () -> Unit
+        ) {
+            YesNoDialogue(
+                context,
+                title,
+                message,
+                yesText,
+                noText,
+                yesAction,
+                noAction
+            ).show()
+        }
+
+
+
+
+
+
 
     }
 }
