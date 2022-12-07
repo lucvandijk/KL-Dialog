@@ -4,7 +4,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
 
-class YesNoDialogue(
+class YesNoDialog(
     context: Context,
     title: String,
     message: String,

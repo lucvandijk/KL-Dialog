@@ -2,13 +2,13 @@ package com.kl.dialog
 
 import android.content.Context
 import com.kl.dialog.dialogs.AlertDialogue
-import com.kl.dialog.dialogs.SelectionDialogue
-import com.kl.dialog.dialogs.YesNoDialogue
+import com.kl.dialog.dialogs.SelectionDialog
+import com.kl.dialog.dialogs.YesNoDialog
 
 class KLDialogueManager {
     companion object {
 
-        fun alertDialogue(
+        fun alertDialog(
             context: Context,
             title: String,
             message: String,
@@ -24,7 +24,7 @@ class KLDialogueManager {
             ).show()
         }
 
-        fun yesNoDialogue(
+        fun yesNoDialog(
             context: Context,
             title: String,
             message: String,
@@ -33,7 +33,7 @@ class KLDialogueManager {
             yesAction: () -> Unit,
             noAction: () -> Unit
         ) {
-            YesNoDialogue(
+            YesNoDialog(
                 context,
                 title,
                 message,
@@ -44,17 +44,23 @@ class KLDialogueManager {
             ).show()
         }
 
-        fun selectionDialogue(
+        fun selectionDialog(
             context: Context,
             title: String,
-            items: Array<String>,
+            items: ArrayList<String>,
+            yesText: String,
+            noText: String,
+            hintText: String,
             selectionAction: (Int) -> Unit
         ) {
-            SelectionDialogue(
+            SelectionDialog(
                 context,
                 title,
                 items,
-                selectionAction
+                yesText,
+                noText,
+                hintText,
+                selectionAction,
             ).show()
         }
 
