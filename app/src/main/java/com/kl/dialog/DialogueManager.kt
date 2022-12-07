@@ -50,6 +50,7 @@ class KLDialogueManager {
             items: ArrayList<String>,
             yesText: String,
             noText: String,
+            descriptionText: String,
             hintText: String,
             selectionAction: (Int) -> Unit
         ) {
@@ -59,6 +60,7 @@ class KLDialogueManager {
                 items,
                 yesText,
                 noText,
+                descriptionText,
                 hintText,
                 selectionAction,
             ).show()
