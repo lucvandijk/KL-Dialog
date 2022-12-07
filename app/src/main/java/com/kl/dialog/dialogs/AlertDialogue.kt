@@ -1,17 +1,15 @@
-package com.kl.dialog
+package com.kl.dialog.dialogs
 
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
 
-class YesNoDialogue(
+class AlertDialogue(
     context: Context,
     title: String,
     message: String,
-    yesTest: String,
-    noText: String,
-    confirmActionCallback: () -> Unit,
-    denyActionCallback: () -> Unit
+    yesText: String,
+    confirmActionCallback: () -> Unit
 ): AlertDialog.Builder(context) {
 
     init{
@@ -24,15 +22,14 @@ class YesNoDialogue(
                     DialogInterface.BUTTON_POSITIVE -> {
                         confirmActionCallback()
                     }
-                    DialogInterface.BUTTON_NEGATIVE -> {
-                        denyActionCallback()
-                    }
                 }
             }
 
-        setPositiveButton(yesTest, listener)
-        setNegativeButton(noText, listener)
+        setPositiveButton(yesText, listener)
 
+        setOnCancelListener {
+            confirmActionCallback()
+        }
     }
 
 }

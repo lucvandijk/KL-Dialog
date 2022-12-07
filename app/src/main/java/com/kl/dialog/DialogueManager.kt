@@ -1,7 +1,9 @@
 package com.kl.dialog
 
 import android.content.Context
-import android.view.WindowManager
+import com.kl.dialog.dialogs.AlertDialogue
+import com.kl.dialog.dialogs.SelectionDialogue
+import com.kl.dialog.dialogs.YesNoDialogue
 
 class KLDialogueManager {
     companion object {
@@ -42,11 +44,19 @@ class KLDialogueManager {
             ).show()
         }
 
-
-
-
-
-
+        fun selectionDialogue(
+            context: Context,
+            title: String,
+            items: Array<String>,
+            selectionAction: (Int) -> Unit
+        ) {
+            SelectionDialogue(
+                context,
+                title,
+                items,
+                selectionAction
+            ).show()
+        }
 
     }
 }
