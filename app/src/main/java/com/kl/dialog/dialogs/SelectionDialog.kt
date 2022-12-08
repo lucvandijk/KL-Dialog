@@ -42,11 +42,6 @@ class SelectionDialog(
         setView(requestCheckView)
 
         setPositiveButton(yesText) { _, _ ->
-            // Close the dialogue when user input is invalid
-            if (selectedIndex == -1) {
-                return@setPositiveButton
-            }
-
             confirmationAction(selectedIndex)
         }
 
